@@ -5,19 +5,19 @@ sudo: required
 dist: trusty
 env:
   matrix:
-    - xMPI=0 
-    - xMPI=1 
-    
+    - xMPI=0
+    - xMPI=1
+
 matrix:
  # do notify immediately about it when a job of a build fails.
   fast_finish: true
-branches:
- only:
-  - master
+# branches:
+#  only:
+#   - master
 cache:
-  apt: true 
+  apt: true
   ccache: true
-  
+
 
 before_install:
   - echo $CXX
@@ -26,7 +26,7 @@ before_install:
   - if [ "$CC" == "gcc" ];  then export CC=""; fi
   - echo $CXX
   - echo $CC
-  
+
   - echo $LANG
   - echo $LC_ALL
 
@@ -45,13 +45,13 @@ before_install:
   - sudo pip install -U setuptools
   - pip install --user cython==0.23.4
 
-install: 
+install:
   - cython --version
-  
+
 before_script:
-  - chmod +x build.sh 
-  
-script: ./build.sh      
+  - chmod +x build.sh
+
+script: ./build.sh
 
 notifications:
   email:
