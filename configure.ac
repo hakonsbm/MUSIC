@@ -357,7 +357,7 @@ AX_CHECK_COMPILE_FLAG([-fno-strict-aliasing],
 		      [])
 
 PYMUSIC_SUBDIR=""
-if test -z "${COND_USE_MPI_TRUE}"; then
+if test -z "${COND_USE_MPI}"; then
 
 # FIXME: this means that --without-python make will not recurse into pymusic subdir
 if test "x$have_python" = "xyes"; then
